@@ -6,7 +6,7 @@
     <ul>
       <li v-for="paciente in pacientes" :key="paciente.id">
         {{ paciente.nombre }} {{ paciente.apellido }} - {{ paciente.edad }} |
-         {{ paciente. }}
+         {{ paciente.prevision }}
       </li>
     </ul>
   </div>
@@ -25,6 +25,7 @@ export default {
     pacientes: []
   }),
   mounted() {
+    this.$store.dispatch("traerTodosLosPacientes");
   //  Firebase.firestore()
   //  .collection("pacientes")
   //  .get()
